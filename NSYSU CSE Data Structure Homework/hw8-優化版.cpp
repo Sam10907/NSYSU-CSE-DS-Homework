@@ -18,9 +18,9 @@ class Node{ //huffman樹節點
 		Node *rchild;
 		Node(char _val,int _freq,Node *_lchild,Node *_rchild){
 			val=_val;
-        	freq=_freq;
-        	lchild=_lchild;
-        	rchild=_rchild;
+        		freq=_freq;
+        		lchild=_lchild;
+        		rchild=_rchild;
 		}
 };
 deque<Node*> forest; //儲存各個節點的指標
@@ -195,12 +195,12 @@ bool comp1(Node *a,Node *b){
 }
 void printCode(Node *ptr,string s){
 	if(ptr->lchild==NULL || ptr->rchild==NULL){
-        unsigned char c=ptr->val;
-        mtable.insert(pair<unsigned char,string>(c,s));
-        return;
-    }
-    if(ptr->lchild) printCode(ptr->lchild,s+"0");
-    if(ptr->rchild) printCode(ptr->rchild,s+"1");
+        	unsigned char c=ptr->val;
+        	mtable.insert(pair<unsigned char,string>(c,s));
+        	return;
+    	}
+    	if(ptr->lchild) printCode(ptr->lchild,s+"0");
+    	if(ptr->rchild) printCode(ptr->rchild,s+"1");
 }
 deque<unsigned long> encode(){
 	bitset<8> byte;
